@@ -1,12 +1,16 @@
 import './App.css';
-import TarjetaForm from './componentes/TarjetaForm';
+import Home from './componentes/Home';
+
+
 
 function App() {
+  
+ 
   return (
-    <div className="App">
-      <TarjetaForm/>      
-    </div>
+      <main className="App">
+        <Home/>
+      </main>
   );
-}
+};
 
 export default App;
