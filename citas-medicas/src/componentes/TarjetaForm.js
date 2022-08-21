@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-/* import ContextInform from "./ContextInform";
- */import Input from './Input';
+ import Input from './Input';
 
 
 function TarjetaForm({pacientes,setPacientes}) {
@@ -53,14 +52,31 @@ function TarjetaForm({pacientes,setPacientes}) {
         setSintoma("")
     }
 
+    /* const [editar,setEditar] = useState(false);
+
+   
+
+    const editarCard = (e) => {
+        e.preventDefault()
+        const actualizado = pacientes.map(paciente => paciente.nombre === nombre ? {nombre,correo,telefono,dia,hora,sintoma} : paciente)
+        setPacientes(actualizado);
+        setEditar(false);
+        setNombre("");
+        setCorreo("");
+        setTelefono("");
+        setDia("");
+        setHora("");
+        setSintoma("");
+    } */
+
     return (
         <div className="flex flex-wrap justify-center mt-20">
             <div className="w-full max-w-sm">
                 <div className="w-full p-7 bg-blue-700 rounded-t-lg">
                     <p className="text-xl text-white font-bold">Llene el Formulario</p>
                 </div>
-                {/* FORM */}
-                <form onSubmit={enviarDatos} className="shadow-md bg-blue-100 text-left rounded px-8 pt-6 pb-8 mb-4">
+
+                <form className="shadow-md bg-blue-100 text-left rounded px-8 pt-6 pb-8 mb-4">
                     <Input
                         tipo="text"
                         label="Nombre"
@@ -80,7 +96,7 @@ function TarjetaForm({pacientes,setPacientes}) {
                     <Input
                         tipo="tel"
                         label="Número Telefónico"
-                        placeholder="555-555-555"
+                        placeholder="5555-5555"
                         vinculo="telefono"
                         funcion={cambiarTelefono}
                         valor={telefono} 
@@ -110,9 +126,16 @@ function TarjetaForm({pacientes,setPacientes}) {
                         valor={sintoma} 
                     />
                     <div className="flex items-center justify-center">
-                        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 focus:outline-none focus:shadow-outline">
-                            Enviar Solicitud
-                        </button>
+                        {/* {
+                            editar ? (
+                                <button onClick={editarCard} type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 focus:outline-none focus:shadow-outline">
+                                    Actualizar Solicitud
+                                </button>
+                            ) : */}
+                            <button  onClick={enviarDatos} type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 focus:outline-none focus:shadow-outline">
+                                Enviar Solicitud
+                            </button>
+                       {/*  } */}
                     </div>
                 </form>
             </div>

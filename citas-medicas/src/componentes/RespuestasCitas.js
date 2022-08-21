@@ -1,11 +1,9 @@
 import React from "react";
 import CitaCard from "./CitaCard";
-/* import CitasContext from "./CitasContext";
-import TarjetaForm from "./TarjetaForm"; */
+
 
 
 function RespuestasCitas({pacientes}) {
-    /* const {nombre} = CitasContext(); */
 
     return (
         <div className="flex flex-wrap justify-center mt-20">
